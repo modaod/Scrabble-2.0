@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="logo">Logo</string>
+    <string name="app_name">Scrabble+</string>
+    <string name="checked">checked</string>
+    <string name="unchecked">unchecked</string>
+    <string name="classique">Scrabble classique</string>
+    <string name="Canaux">Canaux de discussion</string>
+    <string name="score">Meilleurs scores</string>
+    <string name="profil">Voir votre profil</string>
+    <string name="textmenu1">Choisissez un mode de jeu ou consultez la liste des meilleurs scores!</string>
+    <string name="textprofile1">Statistiques des parties</string>
+    <string name="textprofile2">Historique du jeu</string>
+    <string name="textprofile3">Activité du compte</string>
+    <string name="textProfileHistoryTable1">Opposant</string>
+    <string name="textProfileHistoryTable2">Résultat</string>
+    <string name="textProfileHistoryTable3">Points du jeu</string>
+    <string name="textProfileHistoryTable4">Date</string>
+    <string name="textStatisticsTable1">Parties jouées</string>
+    <string name="textStatisticsTable2">Parties gagnées</string>
+    <string name="textStatisticsTable3">Points par partie</string>
+    <string name="textStatisticsTable4">Temps par partie</string>
+    <string name="textGameHistoryTableHeader1">Opposant</string>
+    <string name="textGameHistoryTableHeader2">Résultat</string>
+    <string name="textGameHistoryTableHeader3">Points du jeu</string>
+    <string name="textGameHistoryTableHeader4">Date</string>
+    <string name="textAccountActivityTableHeader1">Type d\'activité</string>
+    <string name="textAccountActivityTableHeader2">Date</string>
+    <string name="add_via_username">Ajouter avec le nom d\'utilisateur</string>
+    <string name="type_username">Tapez le nom d\'utilisateur de votre ami</string>
+    <string name="add_friend">Ajouter l\'ami</string>
+    <string name="friends">Amis</string>
+    <string name="add_friend_button">Ajouter un ami</string>
+    <string name="pending_friends">Requêtes en attente de confirmation</string>
+    <string name="online_friends">Amis en ligne</string>
+    <string name="offline_friends">Amis hors ligne</string>
+    <string name="change_language">Changer le langage</string>
+    <string name="friend_button">Amis</string>
+    <string name="signout_button">Se déconnecter</string>
+    <string name="channels_button">Canaux</string>
+    <string name="general_chat">Canal Général</string>
+    <string name="send_button">Envoyer</string>
+    <string name="card_remove_friend">Supprimer l\'ami</string>
+    <string name="card_accept_friend">Accepter</string>
+    <string name="card_deny_friend">Refuser</string>
+    <string name="textModifyUsername">Modifiez votre nom d\'utilisateur!</string>
+    <string name="textModifyAvatar">Modifiez votre avatar!</string>
+    <string name="saveButton">Sauvegarder</string>
+    <string name="continueButton">Continuer</string>
+    <string name="cancelButton">Annuler</string>
+    <string name="textCurrentUsername">Votre nom d\'utilisateur actuel est </string>
+    <string name="textNewUsername">Nouveau nom d\'utilisateur: </string>
+    <string name="textNewUsernameInput">Saisir votre nouveau nom d\'utilisateur</string>
+    <string name="initScore">Score: 0</string>
+    <string name="create_game_header">Configuration de la partie</string>
+    <string name="create_game_classic_mode">Mode multijoueur</string>
+    <string name="create_game_room_name">Nom de la salle</string>
+    <string name="create_game_dictionnary">Dictionnaire</string>
+    <string name="create_game_timer">Temps par tour</string>
+    <string name="create_game_room_visibility">Visibilité de la salle</string>
+    <string name="create_game_password">Protection avec mot de passe</string>
+    <string name="create_room_button">Créer une partie</string>
+    <string name="return_home_button">Retourner au menu principal</string>
+    <string name="timer_add_button">+</string>
+    <string name="timer_subtract_button">-</string>
+    <string name="timer_default_time">1:00</string>
+    <string name="waiting_room_header">Liste des joueurs</string>
+    <string name="add_virtual_player_button">Ajouter un joueur virtuel</string>
+    <string name="start_game_button">Démarrer</string>
+    <string name="leave_room_button">Quitter la salle</string>
+    <string name="theme_button">Changer de thème</string>
+    <string name="roomPassword">Mot de passe:</string>
+    <string name="textPasswordInput">Entrer le mot de passe de la salle</string>
+    <string name="welcome">Bonjour</string>
+    <string name="card_chat">Message</string>
+    <string name="wordverification">Vérification de mots</string>
+    <string-array name="room_visibility_dropdown">
+        <item>Publique</item>
+        <item>Privée</item>
+    </string-array>
+    <string-array name="dictionary_dropdown">
+        <item>Mon dictionnaire : Français</item>
+    </string-array>
+</resources>

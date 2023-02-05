@@ -1,0 +1,98 @@
+<div class="profile-page-content">
+        <div class="profile-settings">
+            <div class="avatar">
+                <div class="avatar-container"><img src="{{ user.avatarUrl }}" alt="avatar" width="80" height="80" /></div>
+                <button mat-icon-button class="edit-photo-button" (click)="openModifyProfile(true)"><mat-icon>add_photo_alternate</mat-icon></button>
+            </div>
+            <div class="username-settings-container">
+                <div class="username"><p>{{ user.username }}</p></div>
+                <button mat-icon-button class="edit-username-button" (click)="openModifyProfile(false)"><mat-icon>edit</mat-icon></button>
+            </div>
+        </div>
+        <div class="profile-staistics">
+            <h1>{{this.languageService.language.gameStatsLabel}}</h1>
+            <div class="usage-statistics">
+                <div class="usage-statistics-container">
+                    <div class="statistics">
+                        <div class="statistics-icon">
+                            <mat-icon>videogame_asset</mat-icon>
+                        </div>
+                        <div class="statistics-title">
+                            <span>{{this.languageService.language.gamesPlayed}}</span>
+                            <span>{{ playedGames }}</span>
+                        </div>
+                    </div>
+                    <div class="statistics">
+                        <div class="statistics-icon">
+                            <mat-icon>bar_chart</mat-icon>
+                        </div>
+                        <div class="statistics-title">
+                            <span>{{this.languageService.language.gameWon}}</span>
+                            <span>{{ wonGames }}</span>
+                        </div>
+                    </div>
+                    <div class="statistics">
+                        <div class="statistics-icon">
+                            <mat-icon>show_chart</mat-icon>
+                        </div>
+                        <div class="statistics-title">
+                            <span>{{this.languageService.language.gamePoints}}</span>
+                            <span>{{ meanScore }}</span>
+                        </div>
+                    </div>
+                    <div class="statistics">
+                        <div class="statistics-icon">
+                            <mat-icon>access_time</mat-icon>
+                        </div>
+                        <div class="statistics-title">
+                            <span>{{this.languageService.language.gameTime}}</span>
+                            <span>{{ meanTime }} s </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>{{this.languageService.language.gamePlayed}}</h1>
+            <div class="game-history">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{{this.languageService.language.opponentLabel}}</th>
+                            <th>{{this.languageService.language.resultLabel}}</th>
+                            <th>{{this.languageService.language.gamePointLabel}}</th>
+                            <th>{{this.languageService.language.dateLabel}}</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let game of user.gamesPlayed">
+                            <!-- <td>{{getOpponents(game)}}</td>
+                            <td>{{getGameResult(game)}}</td>
+                            <td>{{getGameScore(game)}}</td>
+                            <td>{{getGameDate(game)}}</td> -->
+
+                            <td>{{game.opponents}}</td>
+                            <td>{{game.win ? "vous avz gagné" : "vous avez perdu"}}</td>
+                            <td>{{game.score}}</td>
+                            <td>{{game.date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h1>{{this.languageService.language.accActivityLabel}}</h1>
+            <div class="activity">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{{this.languageService.language.activityType}}</th>
+                            <th>{{this.languageService.language.dateLabel}}</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let activity of user.activity">
+                            <td>{{activity.type}}</td>
+                            <td>{{activity.date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

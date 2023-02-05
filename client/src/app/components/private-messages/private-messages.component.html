@@ -1,0 +1,100 @@
+<div class="private-messages">
+
+    <div class="private-messages-open"  *ngIf="show;  else elseBlock">
+        <div class="close">
+            <button (click)="show = !show">X</button>
+        </div>
+        <div class="destinataires-list">
+        <!-- <p>{{privateMessagesService.allFriends[0].avatarUrl}}</p>
+        <div *ngFor="let friend of privateMessagesService.allFriends">
+            <p>{{friend.email}}</p>
+        </div> -->
+
+
+
+        <div class="player-list">
+            <!-- <img id="myimg" src="" alt=""> -->
+            <div class="player" *ngFor="let user of privateMessagesService.allFriends" (click)="openConversation(user.uid)">
+                <div class="player-avatar">
+                    <img src="{{ user.avatarUrl }}" alt="avatar" width="27" height="27" />
+                </div>
+                <div class="player-info-container">
+                    <div class="player-name">
+                        <div>
+                            <p>{{ user.username }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <input id="sss" type="file" (change)="onFileChanged($event)" accept="image/*"/> -->
+        </div>
+
+
+
+        </div>
+        <div class="conversation">
+
+            <div #messagesList class="messages-list">
+
+                <div *ngFor="let conversation of currentConversation; let last = last">
+                    <div class="message" [ngClass]=" {'user-message':conversation.uid === privateMessagesService.auth.auth.currentUser?.uid, 'friend-message':conversation.uid !== privateMessagesService.auth.auth.currentUser?.uid}">
+                        <div *ngIf="conversation.uid === privateMessagesService.auth.auth.currentUser?.uid; else elseConv" >
+                            <div class="message-header">
+                                
+                                <img src="{{currentUser?.avatarUrl}}" alt="avatar">
+                                <p class="name"> {{currentUser?.username}}</p>
+                                <p class="time">{{conversation.time}}</p>
+                            </div>
+                            <hr/>
+                            <p *ngIf="!conversation.picture"> {{conversation.message}}</p>
+                            <img class="image-sent" *ngIf="conversation.picture" [src]="conversation.message" alt="image" >
+                        </div>
+                        <ng-template #elseConv>
+                            <div>
+                                <div class="message-header">
+                                
+                                    <img src="{{currentFriend?.avatarUrl}}" alt="avatar">
+                                    <p class="name"> {{currentFriend?.username}}</p>
+                                    <p class="time">{{conversation.time}}</p>
+                                </div>
+                                <hr/>
+                                <p *ngIf="!conversation.picture"> {{conversation.message}}</p>
+                                <img class="image-sent" *ngIf="conversation.picture" [src]="conversation.message" alt="image" >
+    
+                                
+                            </div>
+                                                 
+                        </ng-template>
+                    </div>
+                    <!-- {{last ? scrollToBottom() : ''}} -->
+                </div>
+             </div>
+
+            <div *ngIf="currentFriend" class="input-zone">
+                <!-- <span contenteditable="true" maxlength="200"> </span> -->
+
+                <label for="send-image">
+                    <div class="mat-fab" color="#d3b1a7" >
+                        <mat-icon>image</mat-icon>
+                    </div>
+
+                </label>
+                <input #inputFile name="send-image" id="send-image" type="file" (change)="onFileChanged($event)" accept="image/*"  class="inputfile"/>
+
+                <textarea #input class="input" id="player-name" placeholder="{{this.languageService.language.yourMsgPlaceholderLabel}}" maxlength="200" #text ></textarea>
+
+                <button mat-fab color="#d3b1a7" (click)="sendMessage(text.value)">
+                    <mat-icon>send</mat-icon>
+                  </button>
+            </div>
+
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <button class="private-messages-close" (click)="show = !show" >
+
+            <mat-icon>question_answer</mat-icon>
+        </button>
+    </ng-template>
+</div>

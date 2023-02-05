@@ -1,0 +1,114 @@
+<div class="container justified" [ngStyle]="{'background-color': this.theme}">
+    <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <div class="main-container">
+        <div class="main-wrap">
+            <p class="main-title" *ngIf="waitingRooms.length">{{this.languageService.language.joinGameTitle}} {{ gameType }}</p>
+            <p class="sub-title" *ngIf="!waitingRooms.length">{{this.languageService.language.noGameTitleP1}} {{ gameType }} {{this.languageService.language.noGameTitleP2}}</p>
+            <div class="game-history" *ngIf="waitingRooms.length">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>{{this.languageService.language.roomNameLabel}}</th>
+                            <th>{{this.languageService.language.roomHostLabel}}</th>
+                            <th>{{this.languageService.language.playerListLabel}}</th>
+                            <th>{{this.languageService.language.observerListLabel}}</th>
+                            <th>{{this.languageService.language.timeTurnLabel}}</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let waitingRoom of waitingRooms">
+                            <td>
+                                <div id="room-name-cell">
+                                    <div id="room-name">
+                                        {{ waitingRoom.roomName }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="player-list">
+                                    <div class="player" *ngFor="let user of waitingRoom.users">
+                                        <div class="player-avatar" *ngIf="user.username === waitingRoom.hostName">
+                                            <img src="{{ user.avatar }}" alt="avatar" width="27" height="27" />
+                                        </div>
+                                        <div class="player-info-container" *ngIf="user.username === waitingRoom.hostName">
+                                            <div class="player-name">
+                                                <div>
+                                                    <p>{{ user.username }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="player-type">
+                                                <div>
+                                                    <p>{{this.languageService.language.humanPlayerLabel}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="player-list">
+                                    <div class="player" *ngFor="let user of waitingRoom.users">
+                                        <div class="player-avatar" *ngIf="user.username !== waitingRoom.hostName && user.userType !== 'observer'">
+                                            <img src="{{ user.avatar }}" alt="avatar" width="27" height="27" />
+                                        </div>
+                                        <div class="player-info-container" *ngIf="user.username !== waitingRoom.hostName  && user.userType !== 'observer'">
+                                            <div class="player-name">
+                                                <div>
+                                                    <p>{{ user.username }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="player-type">
+                                                <div>
+                                                    <p *ngIf="user.userType === 'human'">{{this.languageService.language.humanPlayerLabel}}</p>
+                                                    <p *ngIf="user.userType === 'virtual'">{{this.languageService.language.virtualPlayerLabel}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="player-list">
+                                    <div class="player" *ngFor="let user of waitingRoom.users">
+                                        <div class="player-avatar" *ngIf="user.username !== waitingRoom.hostName && user.userType === 'observer'">
+                                            <img src="{{ user.avatar }}" alt="avatar" width="27" height="27" />
+                                        </div>
+                                        <div class="player-info-container" *ngIf="user.username !== waitingRoom.hostName && user.userType === 'observer'">
+                                            <div class="player-name">
+                                                <div>
+                                                    <p>{{ user.username }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="player-type">
+                                                <div>
+                                                    <p>{{this.languageService.language.observerLabel}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="game-option">
+                                <div id="room-timer-cell">
+                                    <div id="room-timer">
+                                        {{ waitingRoom.timer.minute + ':' + (waitingRoom.timer.second | number: '2.0-0') }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="game-buttons">
+                                    <button class="button join" *ngIf="!waitingRoom.isGameStarted" (click)="joinRoom(waitingRoom, true)">{{this.languageService.language.joinLabel}}</button>
+                                    <button class="button join" (click)="joinRoom(waitingRoom, false)">{{this.languageService.language.observeLabel}}</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="button-container">
+                <button class="button red" routerLink="/home">{{this.languageService.language.soloMultiReturnButtonLabel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<resources>
+    <string name="logo">Logo</string>
+    <string name="app_name">Scrabble+</string>
+    <string name="checked">checked</string>
+    <string name="unchecked">unchecked</string>
+    <string name="classique">Classic Scrabble</string>
+    <string name="Canaux">Text channels</string>
+    <string name="score">Best scores</string>
+    <string name="profil">Open profile page</string>
+    <string name="textmenu1">Choose a game mode or view the scoreboard!</string>
+    <string name="textprofile1">Match statistics</string>
+    <string name="textprofile2">Game history</string>
+    <string name="textprofile3">Account activity</string>
+    <string name="textProfileHistoryTable1">Opponent</string>
+    <string name="textProfileHistoryTable2">Result</string>
+    <string name="textProfileHistoryTable3">Game points</string>
+    <string name="textProfileHistoryTable4">Date</string>
+    <string name="textStatisticsTable1">Played games</string>
+    <string name="textStatisticsTable2">Won games</string>
+    <string name="textStatisticsTable3">Points by game</string>
+    <string name="textStatisticsTable4">Game time</string>
+    <string name="textGameHistoryTableHeader1">Opponent</string>
+    <string name="textGameHistoryTableHeader2">Result</string>
+    <string name="textGameHistoryTableHeader3">Game points</string>
+    <string name="textGameHistoryTableHeader4">Date</string>
+    <string name="textAccountActivityTableHeader1">Activity type</string>
+    <string name="textAccountActivityTableHeader2">Date</string>
+    <string name="add_via_username">Add via username</string>
+    <string name="type_username">Type your friend\'s username</string>
+    <string name="add_friend">Add friend</string>
+    <string name="friends">Friends</string>
+    <string name="add_friend_button">Add friend</string>
+    <string name="pending_friends">Incoming requests</string>
+    <string name="online_friends">Online friends</string>
+    <string name="offline_friends">Offline friends</string>
+    <string name="change_language">Change language</string>
+    <string name="friend_button">Friends</string>
+    <string name="signout_button">Sign out</string>
+    <string name="channels_button">Channels</string>
+    <string name="general_chat">General Chat</string>
+    <string name="send_button">Send</string>
+    <string name="card_remove_friend">Remove friend</string>
+    <string name="card_accept_friend">Accept</string>
+    <string name="card_deny_friend">Deny</string>
+    <string name="textModifyUsername">Modify your username!</string>
+    <string name="textModifyAvatar">Modify your avatar!</string>
+    <string name="saveButton">Save</string>
+    <string name="continueButton">Continue</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="textCurrentUsername">Your new username is </string>
+    <string name="textNewUsername">New username: </string>
+    <string name="textNewUsernameInput">Enter your new username</string>
+    <string name="initScore">Score: 0</string>
+    <string name="create_game_header">Game configuration</string>
+    <string name="create_game_classic_mode">Multiplayer mode</string>
+    <string name="create_game_room_name">Room name</string>
+    <string name="create_game_dictionnary">Dictionary</string>
+    <string name="create_game_timer">Timer</string>
+    <string name="create_game_room_visibility">Room visibility</string>
+    <string name="create_game_password">Password protection</string>
+    <string name="create_room_button">Create game</string>
+    <string name="return_home_button">Back home</string>
+    <string name="timer_add_button">+</string>
+    <string name="timer_subtract_button">-</string>
+    <string name="timer_default_time">1:00</string>
+    <string name="waiting_room_header">Player list</string>
+    <string name="add_virtual_player_button">Add virtual player</string>
+    <string name="start_game_button">Start</string>
+    <string name="leave_room_button">Leave room</string>
+    <string name="theme_button">Change the theme</string>
+    <string name="roomPassword">Password:</string>
+    <string name="textPasswordInput">Enter the room password</string>
+    <string name="welcome">Welcome</string>
+    <string name="card_chat">Chat</string>
+    <string name="wordverification">Verify words</string>
+    <string-array name="room_visibility_dropdown">
+        <item>Public</item>
+        <item>Private</item>
+    </string-array>
+    <string-array name="dictionary_dropdown">
+        <item>My dictionary : French</item>
+    </string-array>
+</resources>

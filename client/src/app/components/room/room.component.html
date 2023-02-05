@@ -1,0 +1,35 @@
+<section>
+    <div class='room'>
+        <h2>{{this.languageService.language.roomLabel}}</h2>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{this.languageService.language.createRoomLabel}}</mat-label>
+            <input matInput placeholder="Entrer le nom du salon"
+                   [formControl]="newRoom"
+                   (ngModelChange)="onChange()"
+                   (keyup.enter)='onCreateRoom()'/>
+            <mat-hint *ngIf="newRoom.invalid">{{this.languageService.language.chooseRoomLabel}}</mat-hint>
+            <mat-error *ngIf="roomExist">{{this.languageService.language.roomErrorLabel}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>{{this.languageService.language.searchRoomLabel}}</mat-label>
+                <input matInput placeholder='Ecrire le nom du salon ici'
+                       [formControl]="roomControl"
+                       [matAutocomplete]="auto"
+                       [disabled]="!newRoom.value.active"
+                       (ngModelChange)="onChange2()">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-dialog-actions>
+            <button class="button" mat-button mat-dialog-close="close">{{this.languageService.language.backButton}}</button>
+            <button class="easel-button" mat-button *ngIf="newRoom.value !== ''" (click)='onCreateRoom()'>{{this.languageService.language.createButton}}</button>
+            <button class="easel-button" mat-button *ngIf="find()" (click)='onJoinRoom()'>{{this.languageService.language.joinButton}}</button>
+        </mat-dialog-actions>
+    </div>
+</section>

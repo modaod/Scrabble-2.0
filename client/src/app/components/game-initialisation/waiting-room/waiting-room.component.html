@@ -1,0 +1,67 @@
+<div class="container justified" [ngStyle]="{'background-color': this.theme}">
+    <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <div class="main-container">
+        <div class="main-wrap">
+            <p class="main-title">{{this.languageService.language.playerListLabel}}</p>
+            <div id="spinner-container" *ngIf="!playerList.length && !observerList.length">
+                <mat-spinner></mat-spinner>
+            </div>
+            <div class="player-list">
+                <div class="player" *ngFor="let player of playerList">
+                    <div class="player-avatar">
+                        <img src="{{ player.avatar }}" alt="avatar" width="55" height="55" />
+                    </div>
+                    <div class="player-info-container">
+                        <div class="player-name">
+                            <div>
+                                <p>{{ player.username }}</p>
+                            </div>
+                        </div>
+                        <div class="player-type">
+                            <div>
+                                <p *ngIf="player.userType === 'human'">{{this.languageService.language.humanPlayerLabel}}</p>
+                                <p *ngIf="player.userType === 'virtual'">{{this.languageService.language.virtualPlayerLabel}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-buttons" *ngIf="isHostPlayerWaiting">
+                        <div>
+                            <button mat-button *ngIf="player.userType === 'human' && isPrivateRoom" (click)="denyPlayer(player.username, true)"><mat-icon>close</mat-icon></button>
+                            <button mat-button *ngIf="player.userType === 'virtual'" (click)="removeVirtualPlayer(player.username)"><mat-icon>close</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="player" *ngFor="let observer of observerList">
+                    <div class="player-avatar">
+                        <img src="{{ observer.avatar }}" alt="avatar" width="55" height="55" />
+                    </div>
+                    <div class="player-info-container">
+                        <div class="player-name">
+                            <div>
+                                <p>{{ observer.username }}</p>
+                            </div>
+                        </div>
+                        <div class="player-type">
+                            <div>
+                                <p>{{this.languageService.language.observerLabel}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-buttons" *ngIf="isHostPlayerWaiting && isPrivateRoom">
+                        <div>
+                            <button mat-button (click)="denyPlayer(observer.username, false)"><mat-icon>close</mat-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-container" *ngIf="isHostPlayerWaiting">
+                <button class="button" *ngIf="virtualPlayerList.length < 2 && playerList.length < 3" (click)="addVirtualPlayer()">{{this.languageService.language.addVirtualPlayerLabel}}</button>
+                <button class="button" [disabled]="playerList.length < 3" (click)="launchGame()">{{this.languageService.language.startLabel}}</button>
+                <button class="button red" (click)="deleteRoom()">{{this.languageService.language.waitingRoomLeaveQueue}}</button>
+            </div>
+            <div class="button-container" *ngIf="!isHostPlayerWaiting">
+                <button class="button red" (click)="leaveRoom()">{{this.languageService.language.waitingRoomLeaveQueue}}</button>
+            </div>
+        </div>
+    </div>
+</div>

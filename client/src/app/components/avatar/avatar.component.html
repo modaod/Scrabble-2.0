@@ -1,0 +1,6 @@
+
+<div class="images">
+    <div *ngFor="let image of images">
+        <img class= "image" src="{{ image }}" alt="avatar" [ngClass]="{'selected': image === currentImage }" (click)="onClick(image)" />
+    </div>
+</div>

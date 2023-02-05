@@ -1,0 +1,29 @@
+<div id="zoom-holder">
+    <div id="holder-buttons-container" (click)="$event.stopPropagation()">
+        <canvas #draggableCanvas id="draggable-canvas" style="display: none;"></canvas>
+        <button class="button" id="cancelButton" [style.visibility]="makingSelection ? 'visible' : 'hidden'" (click)="cancelSelection()">
+            {{this.languageService.language.cancelButton}}
+        </button>
+
+        <canvas
+            onmousedown="isReceiver()"
+            (contextmenu)="isReceiver()"
+            #letterHolder
+            (keypress)="onKeyDown($event)"
+            onmousedown="mouseDown($event)" onmousemove="mouseMove($event)" onmouseup="mouseUp($event)"
+            id="letter-holder-container"
+            [attr.width]="width"
+            [attr.height]="height"
+        ></canvas>
+
+        <button
+            class="button"
+            id="swapButton"
+            [style.visibility]="makingSelection ? 'visible' : 'hidden'"
+            (click)="swapLetters()"
+            [disabled]="isDisabled || notEnoughLettersLeft"
+        >
+            {{this.languageService.language.exchangeButton}}
+        </button>
+    </div>
+</div>

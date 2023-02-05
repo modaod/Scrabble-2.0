@@ -1,0 +1,11 @@
+
+.images{
+    display: flex;
+    .selected {
+        border: 10px solid rgb(204, 224, 183);;
+     }
+   
+}
+.image{
+    border: 10px solid transparent;
+}

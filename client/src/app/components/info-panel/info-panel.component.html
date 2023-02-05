@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="inner-container">
+        <header id="title">{{this.languageService.language.infoPanelTitle}}</header>
+        <div id="info" class="player-list">
+            <div class="player" id="{{ player.username }}" *ngFor="let player of playersInfo">
+                <div class="player-user-info">
+                    <div class="player-avatar">
+                        <img src="{{ player.avatar }}" alt="avatar" width="45" height="45" />
+                    </div>
+                    <div class="player-info-container">
+                        <div class="player-name">
+                            <div>
+                                <p>{{ player.username }}</p>
+                            </div>
+                        </div>
+                        <div class="player-type">
+                            <div>
+                                <p *ngIf="player.username ===selfUsername">{{this.languageService.language.youLabel}}</p>
+                                <p *ngIf="player.isHuman && player.username !==selfUsername">{{this.languageService.language.humanPlayerLabel}}</p>
+                                <p *ngIf="!player.isHuman && player.username !==selfUsername">{{this.languageService.language.virtualPlayerLabel}}</p>
+                            </div>
+                        </div>
+                        <div class="player-type name" style="color: #cb654f" *ngIf="player.active">
+                            <div>
+                                <p>{{this.languageService.language.yourTurnLabel}}</p>
+                            </div>
+                        </div>
+                        <div class="player-type name" style="color: #cb654f" *ngIf="player.winner">
+                            <div>
+                                <p>{{this.languageService.language.youWonLabel}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="replace-button-container">
+                        <button *ngIf="!player.isHuman && !isPlayer" class="button green replace-button" (click)="replaceVirtualForObserver(player.username)">Remplacer</button>
+                    </div>
+                </div>
+                <div class="player-game-info">
+                    <p>Score: {{ player.currentScore }}</p>
+                    <p>{{this.languageService.language.letterLabel}} {{ player.letterCount }}</p>
+                </div>
+            </div>
+            <br />
+            <p>{{this.languageService.language.letterInReserveLabel}} {{ roundInfo[0].lettersRemaining }}</p>
+        </div>
+        <br />
+        <app-timer style="height:20px;"></app-timer>
+        <!-- <br />
+        <div id="objectives" *ngIf="areGoals">
+            <p id="objective-subtitle">objectifs publics</p>
+
+            <div *ngFor="let objective of onGoingPublicObjectives">
+                <ul [className]="objective.completed === true ? 'checked' : 'objective-public'">
+                    {{
+                        objective.title
+                    }}
+                    -
+                    {{
+                        objective.points
+                    }}
+                    points
+                    <br />
+                    <br />
+                    <span id="progress-score-current" *ngIf="objective.progress">
+                        {{ playersInfo[0].username }} : {{ objective.progress[0].playerProgress }} / {{ objective.progressMax }}
+                    </span>
+                    <span id="progress-score-opponant" *ngIf="objective.progress">
+                        {{ playersInfo[1].username }} : {{ objective.progress[1].playerProgress }} / {{ objective.progressMax }}
+                    </span>
+                    <br />
+                </ul>
+            </div>
+
+            <p id="objective-subtitle">votre objectif</p>
+            <div>
+                <ul [className]="playersInfo[0].objectives[2].completed === true ? 'checked' : 'objective-public'">
+                    {{
+                        playersInfo[0].objectives[2].title
+                    }}
+                    -
+                    {{
+                        playersInfo[0].objectives[2].points
+                    }}
+                    points
+                    <span id="progress-score" *ngIf="playersInfo[0].objectives[2].progress">
+                        {{ playersInfo[0].objectives[2].progress[0].playerProgress }} / {{ playersInfo[0].objectives[2].progressMax }}
+                    </span>
+                </ul>
+            </div>
+            <div id="objectives-completed">
+                <div id="opponent-objective" *ngIf="playersInfo[1].objectives[2].completed === true">
+                    {{ playersInfo[1].username }} a rempli son objectif :
+                    <ul>
+                        «
+                        {{
+                            playersInfo[1].objectives[2].title
+                        }}
+                        »
+
+                        {{
+                            playersInfo[1].objectives[2].points
+                        }}
+                        points
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

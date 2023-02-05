@@ -1,0 +1,178 @@
+.profile-page-content {
+    background-color: #e6e6f1;
+    padding: 0px 20px;
+}
+
+.profile-settings{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: row;
+    flex: 1 0 auto;
+    align-items: center;
+    justify-content: stretch;
+    padding: 0px 0px 24px;
+    width: 100%;
+    caret-color: transparent;
+}
+
+.avatar{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    margin: 24px 12px 0px 0px;
+    padding: 6px;
+    width: 84px;
+    height: 84px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 14px;
+    background-color: rgb(244, 244, 250);
+    caret-color: transparent;
+}
+
+.edit-photo-button, .edit-username-button {
+    padding: 0;
+    min-width: 0;
+    width: 0px;
+    height: 0px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 50px 0px 0px 0px;
+}
+
+.edit-username-button {
+    margin: 0px;
+}
+
+.username-settings-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.username-settings-container mat-icon{
+    margin: 24px 0px 0px 0px;
+}
+
+.username{
+    font-size: 24px;
+    font-weight: 700;
+    margin: 24px 12px 0px 0px;
+    padding: 6px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.usage-statistics{
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 24px 0px;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    caret-color: transparent;
+}
+
+.usage-statistics-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 26px 16px;
+    caret-color: transparent;
+}
+
+.statistics{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: stretch;
+    padding: 0px 16px 0px 0px;
+    caret-color: transparent;
+}
+
+.statistics-icon{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: rgb(244, 244, 250);
+    caret-color: transparent;
+}
+
+.statistics-title{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 0px 0px 0px 12px;
+    caret-color: transparent;
+}
+
+.statistics-title span:nth-child(1){
+    font-size: 18px;
+    color: rgb(146, 146, 166);
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.statistics-title span:nth-child(2){
+    font-size: 28px;
+    line-height: 20px;
+    margin: 8px 0px 0px;
+}
+
+.game-history, .activity{
+    position: relative;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 1rem 0px;
+    caret-color: transparent;
+}
+
+table{
+    border-radius: 12px 12px 0px 0px;
+    color: rgb(146, 146, 166);
+    font-weight: 600;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+tr{
+    background-color: rgb(255, 255, 255);
+}
+
+th{
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    padding: 18px 24px !important;
+    background-color: transparent !important;
+    border-collapse:collapse
+}
+
+td{
+    width: fit-content;
+    border-top: 2px solid rgb(230, 230, 241) !important;
+    vertical-align: middle !important;
+    padding: 8px 24px !important;
+    background-color: transparent !important;
+    text-align: center; 
+    height: 35px;
+}

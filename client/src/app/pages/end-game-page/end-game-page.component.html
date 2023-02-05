@@ -1,0 +1,48 @@
+<div class='page-section'>
+    <div class='block-container'>
+        <div class="card-container" *ngFor="let win of this.winner">
+            <mat-card class='end-game-card'
+                      [ngStyle]="{'background-color':win[0].uid === this.playerUID?'rgb(186, 204, 122)':''}">
+                <mat-card-header>
+                    <mat-card-title>{{this.languageService.language.winnerLabel}}</mat-card-title>
+                    <mat-card-subtitle>{{win[1]}}</mat-card-subtitle>
+                </mat-card-header>
+                <img class='avatar-icon' src='{{win[0].avatarUrl}}'>
+                <mat-card-content>
+                    <div class='center-div'>{{win[0].username}}</div>
+                </mat-card-content>
+                <mat-card-actions align='end'>
+                    <button mat-button (click)='this.friendService.addFriend(win[0].username)'
+                            [disabled]='win[0].uid === this.playerUID'
+                            [hidden]='win[0].uid === this.playerUID'>{{this.languageService.language.addFriendButtonLabel}}
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="card-container" *ngFor="let los of this.losers">
+            <mat-card class='end-game-card'
+                      [ngStyle]="{'background-color':los[0].uid === this.playerUID?'rgb(186, 204, 122)':''}">
+                <mat-card-header>
+                    <mat-card-title>{{this.languageService.language.loserLabel}}</mat-card-title>
+                    <mat-card-subtitle>{{los[1]}}</mat-card-subtitle>
+                </mat-card-header>
+                <img class='avatar-icon' src='{{los[0].avatarUrl}}'>
+                <mat-card-content>
+                    <div class='center-div'>{{los[0].username}}</div>
+                </mat-card-content>
+                <mat-card-actions align='end'>
+                    <button mat-button (click)='this.friendService.addFriend(los[0].username)'
+                            [disabled]='los[0].uid === this.playerUID'
+                            [hidden]='los[0].uid === this.playerUID'>{{this.languageService.language.addFriendButtonLabel}}
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class='quit-button-container'>
+        <button mat-button class='button red' (click)='goHome()'>{{this.languageService.language.soloMultiReturnButtonLabel}}</button>
+    </div>
+</div>
+
+

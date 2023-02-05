@@ -1,0 +1,151 @@
+.input-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.input-label {
+    font-family: 'Courier', Courier, monospace;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: right;
+    padding-right: 2vh;
+    margin: 0px;
+    width: 16vh;
+}
+
+.input {
+    font-family: 'Courier', Courier, monospace;
+    line-height: 1.2;
+    font-size: 15px;
+    width: 31vh;
+    padding: 1vh;
+    border-radius: 7px;
+    border: none;
+}
+
+select.input {
+    width: 33.2vh;
+}
+
+#dictionaries.input {
+    width: 33.2vh;
+}
+
+#default-option {
+    color: gray;
+}
+
+#timer-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33vh;
+    height: 4vh;
+    border-radius: 0.5vw;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+}
+
+#dec-button,
+#inc-button {
+    height: 4vh;
+    width: 8vh;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+#dec-button:hover,
+#inc-button:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+#dec-button {
+    border-top-left-radius: 0.5vw;
+    border-bottom-left-radius: 0.5vw;
+}
+
+#inc-button {
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+}
+
+#time-text {
+    padding-left: 4vh;
+    padding-right: 4vh;
+}
+
+.button-container {
+    margin-top: -1vh;
+}
+
+#password-container {
+    max-width: 33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 7vh;
+    height: 4vh;
+    margin-right: 0.5vh;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 3vh;
+    width: 3vh;
+    left: 0.5vh;
+    bottom: 0.5vh;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(3vh);
+  }
+  
+  .slider.round {
+    border-radius: 7px;
+  }
+  
+  .slider.round:before {
+    border-radius: 25%;
+  }
+
+  #password-input {
+    width: 23.5vh;
+  }

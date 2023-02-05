@@ -1,0 +1,28 @@
+<div class="profile-page-content">
+    <div *ngIf="isAvatarModification" class="profile-settings">
+        <h1>{{this.languageService.language.modifyAvatarLabel}}</h1>
+        <div class="avatar">
+           <div class="images">
+                <div *ngFor="let image of images" class="avatar-list">
+                     <img class= "image" src="{{ image }}" alt="avatar" [ngClass]="{'selected': image === currentImage }" (click)="onClick(image)" />
+                </div>
+            </div>
+        </div>
+        <div class="modify-profile-button">
+            <button class="button red" (click)="closeDialog()">{{this.languageService.language.cancelButton}}</button>
+            <button class="button green" (click)="onSave()">{{this.languageService.language.saveButton}}</button>
+        </div>
+    </div>
+    <div *ngIf="!isAvatarModification" class="profile-settings">
+        <h1>{{this.languageService.language.modifyUsernameLabel}}</h1>
+        <h2>{{this.languageService.language.yourUsernameIsLabel}}</h2>
+        <div class="input-container">
+            <p class="text-container">{{this.languageService.language.newUsernameLabel}}</p>
+            <input class="input" id="player-name" placeholder="Saisir votre nouveau nom d'utilisateur" maxlength="20" #username required />
+        </div>
+        <div class="modify-profile-button">
+            <button class="button red" (click)="closeDialog()">{{this.languageService.language.cancelButton}}</button>
+            <button class="button green" (click)="changeUsername(username.value)">{{this.languageService.language.saveButton}}</button>
+        </div>
+    </div>
+</div>

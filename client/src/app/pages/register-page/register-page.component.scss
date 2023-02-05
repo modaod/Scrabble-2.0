@@ -1,0 +1,28 @@
+.button {
+    width: 37vh;
+}
+
+.avatar{
+    width: 100px;
+    margin-top: 0%;
+}
+
+.login-input-wrap {
+    width: 100%;
+    position: relative;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 0.5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input {
+    font-family: 'Courier', Courier, monospace;
+    line-height: 1.2;
+    font-size: 15px;
+    display: block;
+    width: 35vh;
+    padding: 1vh;
+    border: none;
+}

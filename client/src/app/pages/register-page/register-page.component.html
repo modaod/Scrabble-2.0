@@ -1,0 +1,32 @@
+<div class="container justified">
+    <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <div class="main-container">
+        <div class="main-wrap">
+            <p class="login-title">Inscription</p>
+            <div class="login-input-wrap">
+                <input class="login-input" id="player-name" placeholder="Courriel" #playerEmail required />
+            </div>
+            <br>
+            <div class="login-input-wrap">
+                <input class="login-input" id="player-name" placeholder="Nom d'utilisateur" maxlength="20" #playerUsername required />
+            </div>
+            <br>
+            <div class="login-input-wrap">
+                <input type="password" class="login-input" style="-webkit-text-security: square;" id="player-password" placeholder="Mot de passe" maxlength="20" #playerPassword required />
+            </div>
+            <br>
+            <div class="login-input-wrap">
+                <input type="password" class="login-input" style="-webkit-text-security: square;" id="player-password" placeholder="Confirmation mot de passe" maxlength="20" #playerConfirmedPassword required />
+            </div>
+            <img class="avatar" src="{{avatarUrl}}" alt="avatar" *ngIf="avatarUrl">
+            <button class="button" (click)="openAvatar()">Votre avatar</button>
+            <button class="button" (click)="signup(playerEmail.value, playerPassword.value, playerUsername.value, playerConfirmedPassword.value)">Je m'inscris !</button>
+            <button class="button red" routerLink="/auth">Déja un compte ?</button>
+        </div>
+    </div> 
+    <div id="button-container">
+        <div class="justified">
+        </div>
+        <div></div>
+    </div>
+</div>

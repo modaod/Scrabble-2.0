@@ -1,0 +1,141 @@
+.main-wrap {
+    background: white;
+}
+
+.join {
+    background-color: rgb(204, 224, 183);
+    margin-top: 0px;
+    border-width: 0.5vh;
+    height: 3.75vh;
+    width: 15vh;
+    margin: 5px;
+}
+
+#room-name-cell, #room-timer-cell{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    margin: 0;
+}
+
+.game-history, .activity{
+    position: relative;
+    display: -webkit-flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 1rem 0px;
+    caret-color: transparent;
+}
+
+table{
+    border-radius: 12px 12px 0px 0px;
+    color: rgb(146, 146, 166);
+    font-weight: 600;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+thead{
+    margin-bottom: 5px;;
+}
+
+tr{
+    background-color: rgb(230, 230, 241);
+}
+
+th{
+    font-size: 14px;
+    font-weight: 600;
+    border: none !important;
+    padding: 18px 24px !important;
+    background-color: transparent !important;
+    border-collapse:collapse
+}
+
+td{
+    width: fit-content;
+    border-top: 2px solid white !important;
+    vertical-align: middle !important;
+    padding: 8px 24px !important;
+    background-color: transparent !important;
+}
+
+.player-list{
+    position: relative;
+    display: -webkit-flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 0px;
+    caret-color: transparent;
+}
+
+.player{
+    position: relative;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    padding: 0px;
+    border-radius: 8px;
+    background-color: #f4f4fa;
+}
+
+.player-avatar{
+    position: relative;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    margin: 5px;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #f4f4fa;
+    caret-color: transparent;
+}
+
+.player-name{
+    position: relative;
+    align-items: center;
+    justify-content: stretch;
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.player-type{
+    position: relative;
+    align-items: center;
+    justify-content: stretch;
+    font-size: 10px;
+    line-height: 10px;
+}
+
+.player-info-container {
+    margin-right: 5px;
+}
+
+.player-info-container p{
+    margin: 0px;
+}
+
+.game-buttons{
+    display: flex;
+    flex-direction: column;
+}

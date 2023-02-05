@@ -1,0 +1,87 @@
+<div class="container justified" [ngStyle]="{'background-color': this.theme}">
+    <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <div class="main-container">
+        <div class="main-wrap">
+            <p class="main-title">{{this.languageService.language.createGameTitle}}</p>
+            <p class="sub-title" *ngIf="isRankedMode">{{this.languageService.language.competModeButtonLabel}}</p>
+            <p class="sub-title" *ngIf="!isRankedMode">{{this.languageService.language.multiButtonLabel}}</p>
+            <div class="game-setup-form" *ngIf="!isRankedMode">
+                <div class="input-wrap">
+                    <p class="input-label">{{this.languageService.language.roomNameLabel}}</p>
+                    <input class="input" id="room-name" type="text" placeholder="{{this.languageService.language.roomNamePlaceholder}}" #roomName
+                           required>
+                </div>
+                <div class="input-wrap">
+                    <p class="input-label">{{this.languageService.language.dictionnaryLabel}}</p>
+                    <div *ngIf="dictionaryList.length">
+                        <select class="input" id="dictionaries" required>
+                            <option
+                                id="dictionary-details"
+                                *ngFor="let dictionary of dictionaryList; let indexOfElement = index"
+                                [attr.data-index]="indexOfElement"
+                            >
+                                {{ dictionary.title + ': ' + dictionary.description }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <p class="input-label">{{this.languageService.language.timeTurnLabel}}</p>
+                    <div id="timer-box">
+                        <button #decrementButton id="dec-button" (click)="decrementClock()">-</button>
+                        <div #time id="time-text">1:00</div>
+                        <button #incrementButton id="inc-button" (click)="incrementClock()">+</button>
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <p class="input-label">{{this.languageService.language.roomVisibilityLabel}}</p>
+                    <select class="input" id="dictionaries" [(ngModel)]="roomVisibility" required>
+                        <option value="public" default selected>{{this.languageService.language.publicVisibility}}</option>
+                        <option value="private">{{this.languageService.language.privateVisibility}}</option>
+                    </select>
+                </div>
+                <div *ngIf="roomVisibility==='public'" class="input-wrap">
+                    <p class="input-label">{{this.languageService.language.pwProtection}}</p>
+                    <div id="password-container">
+                        <label class="switch">
+                            <input type="checkbox" [(ngModel)]="passwordCheckbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <input *ngIf="passwordCheckbox" class="input" id="password-input" type="text" placeholder="{{this.languageService.language.passWordPlaceholder}}" #passWord required >
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-setup-form" *ngIf="isRankedMode">
+                <div class="input-wrap">
+                    <p class="input-label">{{this.languageService.language.timeTurnLabel}}</p>
+                    <div id="timer-box">
+                        <div #time id="time-text">0:30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button
+                    [disabled]="buttonDisabled"
+                    *ngIf="isRankedMode"
+                    class="button"
+                    id="createGame"
+                    (click)="joinRankedQueue()"
+                >
+                    {{this.languageService.language.joinQueueButtonLabel}}
+                </button>
+                <button
+                    [disabled]="buttonDisabled"
+                    *ngIf="!isRankedMode"
+                    class="button"
+                    id="createGame"
+                    (click)="checkMultiInput() ? createMultiRoom() : alertFalseInput()"
+                >
+                    {{this.languageService.language.createGameButtonLabel}}
+                </button>
+                <button class="button red" [routerLink]="['/home']">{{this.languageService.language.soloMultiReturnButtonLabel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

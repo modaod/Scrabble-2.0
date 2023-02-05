@@ -1,0 +1,18 @@
+<div>
+    <div class="container justified" [ngStyle]="{'background-color': this.theme}">
+        <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+        <section class="game-modes">
+            <div class="button-container">
+                <button class="button" routerLink="/solo-multi" (click)="setScrabbleMode(gameTypeEnum.CLASSIC)">{{this.languageService.language.mainPageScrabbleClassicButtonLabel}}</button>
+                <button class="button" (click)="openWordFinder()">{{this.languageService.language.verificationButton}}</button>
+                <button class="button" (click)="openProfile()">{{this.languageService.language.profilButtonLabel}}</button>
+                <button class="button" (click)="openFriends()">{{this.languageService.language.friendsButtonLabel}}</button>
+                <button class="button" (click)="changeTheme()">{{this.languageService.language.changeThemeButtonLabel}}</button>
+                <button class="button" (click)='this.languageService.changeLanguage()'>{{this.languageService.language.changeLanguageButtonLabel}}</button>
+                <button class="button red" (click)="logout()">{{this.languageService.language.disconnectButtonLabel}}</button>
+            </div>
+        </section>
+    </div>
+    <app-private-messages></app-private-messages>
+    <app-chat-page></app-chat-page>
+</div>

@@ -1,0 +1,17 @@
+<div class="container justified">
+    <img class ="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <div class="main-container">
+        <div class="main-wrap">
+            <p class="login-title">Connection</p>
+            <div class="login-input-wrap">
+                <input class="login-input" id="player-name" placeholder="Courriel" #playerEmail required />
+            </div>
+            <br>
+            <div class="login-input-wrap">
+                <input type="password" class="login-input" style="-webkit-text-security: square;" id="player-password" placeholder="Mot de passe" maxlength="20" #playerPassword required />
+            </div>
+            <button class="button" (click)="login(playerEmail.value, playerPassword.value)">Se connecter</button>
+            <button class="button red" routerLink="/register">Vous n'avez pas de compte ?</button>
+        </div>
+    </div> 
+</div>

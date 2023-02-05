@@ -1,0 +1,36 @@
+.avatar-icon {
+    clip-path: circle();
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-div {
+    text-align: center;
+}
+
+.block-container {
+    display: flex;
+}
+
+.quit-button-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.end-game-card {
+    margin: 20px;
+}
+
+.page-section {
+    background-color: #e6e6f1;
+    height: 100vh;
+    background-image: url('../../../assets/confetti.gif');
+    background-size: cover;
+}
+
+.card-container {
+    width: 50%;
+}

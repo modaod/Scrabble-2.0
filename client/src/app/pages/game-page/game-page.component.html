@@ -1,0 +1,33 @@
+<div id="wrapper">
+        <div class="container">
+            <section class="side-components">
+                <app-info-panel style="max-height:800px"></app-info-panel>
+    
+                    <div class="flex-container">
+                        <button *ngIf="!endGame" (click)="alert()" class="button" id="abandonner">{{this.languageService.language.abandonButton}}</button>
+                        <button *ngIf="endGame" (click)="goEndPage()" class="button" id="continuer">{{this.languageService.language.continueButton}}</button>
+                        <button class="easel-button" id="skipButton" (click)="skipTurn()" [disabled]="isDisabled">{{this.languageService.language.skipTurnButton}}</button>
+                        <button class="easel-button" id="playButton" [disabled]="isDisabled" (click)="sendWord()">{{this.languageService.language.playButton}}</button>
+                    </div>
+    
+            </section>
+    
+            <div class="game-board">
+                <app-play-area class="play-area" tabindex="0" [receiver]="isReceiver"></app-play-area>
+                <app-letter-holder id="letter-holder" (disabledEvent)=isDisabled></app-letter-holder>
+            </div>
+    
+            <section class="side-components">
+                <app-chat id="chatBox" (receiver)="setReceiver($event)"></app-chat>
+                <app-multi-chat></app-multi-chat>
+    
+                    <div class="flex-container">
+                        <button class="button" (click)="publicChat()" id="public">{{this.languageService.language.generalChatButton}}</button>
+                        <button class="button" (click)="selectRoom()" id="room">{{this.languageService.language.roomChatButton}}</button>
+                        <button class="button" (click)="goChatPage()" id="external">{{this.languageService.language.externalChatButton}}</button>
+                    </div>
+    
+    
+            </section>
+        </div>
+</div>

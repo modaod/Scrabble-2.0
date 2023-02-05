@@ -1,0 +1,87 @@
+.room {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mat-form-field {
+    width: 380px;
+}
+
+.mat-dialog-actions {
+    font-family: 'Arial narrow', cursive;
+    font-size: 20px;
+}
+
+.error-hint {
+    color: red;
+}
+.no-error-hint {
+    color: green;
+}
+
+button {
+    text-decoration: none;
+    margin: 10px;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    background-color: #d3b1a7;
+    border-radius: 7px;
+    width: 100px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    box-shadow: 0 1.8px 1.2px rgba(0, 0, 0, 0.096), 0 5.7px 4.3px rgba(0, 0, 0, 0.103), 0 8.5px 7px rgba(0, 0, 0, 0.11);
+    color: rgb(94, 94, 94);
+    transition: color 0.5s linear;
+    -webkit-transition: color 0.2s linear;
+}
+
+button:hover {
+    color: black;
+    cursor: pointer;
+    background: #cb654f;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.easel-button {
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    background-color: #a5c2b2;
+    border-radius: 7px;
+    width: 120px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    box-shadow: 0 1.8px 1.2px rgba(0, 0, 0, 0.096), 0 5.7px 4.3px rgba(0, 0, 0, 0.103), 0 8.5px 7px rgba(0, 0, 0, 0.11);
+    color: rgb(94, 94, 94);
+}
+.easel-button:disabled,
+.easel-button[disabled] {
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    background-color: #a5c2b2;
+    border-radius: 7px;
+    width: 100px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    box-shadow: 0 1.8px 1.2px rgba(0, 0, 0, 0.096), 0 5.7px 4.3px rgba(0, 0, 0, 0.103), 0 8.5px 7px rgba(0, 0, 0, 0.11);
+    color: rgb(94, 94, 94);
+}
+
+.easel-button:hover:enabled {
+    color: black;
+    cursor: pointer;
+    background: #8cbea3;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}

@@ -1,0 +1,110 @@
+<div class="private-messages">
+
+    <div class="private-messages-open"  *ngIf="show;  else elseBlock">
+        <div class="close">
+            <button (click)="show = !show">X</button>
+        </div>
+        <!-- <p>{{privateMessagesService.allFriends[0].avatarUrl}}</p>
+        <div *ngFor="let friend of privateMessagesService.allFriends">
+            <p>{{friend.email}}</p>
+        </div> -->
+        <div id="container">
+            <aside>
+                <header>
+                    <!--                <input type="text" placeholder="search">-->
+                    <mat-form-field appearance="fill">
+                        <mat-label>Chercher ou créer un salon</mat-label>
+                        <input matInput placeholder='Ecrire le nom du salon'
+                               [formControl]="roomControl"
+                               [matAutocomplete]="auto"
+                               (ngModelChange)="onChange()">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </header>
+
+                <ul class="room-list">
+                    <li class="room-item" *ngFor="let room of rooms; let i = index" (click)="onChooseRoom(room)">
+                        <img class='icon' src="assets/chat-icon.png" alt="avatar">
+                        <div>
+                            <h2> {{ room }} </h2>
+                            <h3>
+                                <span class="status green"></span>
+                                online
+                            </h3>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+
+            <main>
+                <header>
+                    <img class='icon' src="assets/chat-icon.png" alt="">
+                    <div>
+                        <!--                    <h2>Chat with Vincent Porter</h2>-->
+                        <h2>Salon: {{ room }} </h2>
+        <!--                <h3>already 1902 messages</h3>-->
+                        <!--                    <button class="button">Supprimer</button>-->
+                    </div>
+                    <a href="/home">
+<!--                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" (click)='close()'>Fermer</mat-icon>-->
+<!--                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png" alt="">-->
+                    </a>
+                </header>
+
+                <div class="room-chat-history">
+                    <ul class="chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+                        <li [ngClass]="chat.user === me ? 'me' : 'you'" *ngFor="let chat of chats">
+                            <div class="entete user">
+                                <span class="status green"></span>
+                                <div *ngIf="chat.user === me ; else you">
+                                    <h2> Moi </h2>
+                                    <h3> {{ chat.date | date:'short'}}</h3>
+                                </div>
+
+                                <ng-template #you>
+                                    <h2> {{ chat.user }}</h2>
+                                    <h3> {{ chat.date | date:'short'}}</h3>
+                                </ng-template>
+                            </div>
+                            <div class="triangle"></div>
+                            <div class="message">
+                                {{ chat.message }}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <footer>
+                    <div class='input-area'>
+                    <textarea minlength="1" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Entrer votre message"></textarea>
+                    <button class='button' (click)='sendMessage()'>Envoyer</button>
+        <!--            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_picture.png" alt="">-->
+        <!--            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png" alt="">-->
+        <!--            <a href="" (click)="sendMessage()">Send</a>-->
+                    </div>
+                </footer>
+            </main>
+        </div>
+
+
+
+    </div>
+    <ng-template #elseBlock>
+        <button class="private-messages-close" (click)="show = !show" >
+
+            <mat-icon>public</mat-icon>
+        </button>
+    </ng-template>
+</div>
+
+
+
+
+
+
+
+

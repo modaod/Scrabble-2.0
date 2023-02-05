@@ -1,0 +1,104 @@
+<div class="friends-page-content">
+    <div class="split-view-container">
+        <div class="left">
+            <div class="button-row">
+                <button mat-button class="button green menu" (click)="setOnlineView()">{{this.languageService.language.onlineButtonLabel}}</button>
+                <button mat-button class="button green menu" (click)="setAllView()">{{this.languageService.language.allFriendsButtonLabel}}</button>
+                <button mat-button [matBadge]="this.friendService.incomingFriendRequests.length>0?this.friendService.incomingFriendRequests.length:''" matBadgeColor="warn" class="button green menu" (click)="setPendingView()">{{this.languageService.language.pendingButtonLabel}}</button>
+                <button mat-flat-button class="button green menu" color="primary" (click)="setAddView()">{{this.languageService.language.addFriendButtonLabel}}</button>
+            </div>
+            <div *ngIf="isOnlineView">
+                <div class="label">{{this.languageService.language.onlineButtonLabel}} - {{this.friendService.onlineFriends.length}}</div>
+                <div class="section-content">
+                    <div class="friends-container">
+                        <div class="no-data" *ngIf="this.friendService.onlineFriends.length === 0">{{this.languageService.language.onlineNoFriendLabel}}</div>
+                        <div *ngFor="let friend of this.friendService.onlineFriends" class="player">
+                            <span class="dot" [ngStyle]="{'background-color':friend.status === 'Online'? 'green': 'red'}"></span>
+                            <img class="player-avatar" src='{{friend.avatarUrl}}'>
+                            <div class="player-name">{{friend.username}}</div>
+                            <div class='action-buttons'>
+                                <button mat-icon-button>
+                                    <mat-icon>chat_bubble_outline</mat-icon>
+                                </button>
+                                <button mat-icon-button (click)='this.friendService.deleteFriend(friend)'>
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isAllView">
+                <div class="label">{{this.languageService.language.allFriendsLabel}} - {{this.friendService.allFriends.length}}</div>
+                <div class="section-content">
+                    <div class="friends-container">
+                        <div class="no-data" *ngIf="this.friendService.allFriends.length === 0">{{this.languageService.language.allNoFriendLabel}}</div>
+                        <div *ngFor="let friend of this.friendService.allFriends" class="player">
+                            <span class="dot" [ngStyle]="{'background-color':friend.status === 'Online'? 'green': 'red'}"></span>
+                            <img class="player-avatar" src='{{friend.avatarUrl}}'>
+                            <div class="player-name">{{friend.username}}</div>
+                            <div class='action-buttons'>
+                                <button mat-icon-button>
+                                    <mat-icon>chat_bubble_outline</mat-icon>
+                                </button>
+                                <button mat-icon-button (click)='this.friendService.deleteFriend(friend)'>
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isPendingView">
+                <div class="label">{{this.languageService.language.incomingLabel}} - {{this.friendService.incomingFriendRequests.length}}</div>
+                <div class="section-content">
+                    <div class="friends-container">
+                        <div class="no-data" *ngIf="this.friendService.incomingFriendRequests.length === 0">{{this.languageService.language.incomingNoRequestLabel}}</div>
+                        <div *ngFor="let friend of this.friendService.incomingFriendRequests" class="player">
+                            <img class="player-avatar" src='{{friend.avatarUrl}}'>
+                            <div class="player-name">{{friend.username}}</div>
+                            <div class='action-buttons'>
+                                <button mat-icon-button (click)='this.friendService.acceptFriendRequest(friend)'>
+                                    <mat-icon>check</mat-icon>
+                                </button>
+                                <button mat-icon-button (click)='this.friendService.denyFriendRequest(friend)'>
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="label">{{this.languageService.language.outgoingLabel}} - {{this.friendService.outgoingFriendRequests.length}}</div>
+                <div class="section-content">
+                    <div class="friends-container">
+                        <div class="no-data" *ngIf="this.friendService.outgoingFriendRequests.length === 0">{{this.languageService.language.incomingNoRequestLabel}}</div>
+                        <div *ngFor="let friend of this.friendService.outgoingFriendRequests" class="player">
+                            <img class="player-avatar" src='{{friend.avatarUrl}}'>
+                            <div class="player-name">{{friend.username}}</div>
+                            <div class='action-buttons'>
+                                <button mat-icon-button (click)='this.friendService.retractFriendRequest(friend)'>
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isAddView">
+                <div class='label'>{{this.languageService.language.addFriendButtonLabel}}</div>
+                <div>{{this.languageService.language.addFriendDescription}}</div>
+                <div id="word-container">
+                    <div class="usage-statistics">
+                        <div class="usage-statistics-container">
+                            <div id="search-icon">
+                                <mat-icon>search</mat-icon>
+                            </div>
+                            <input id="word-input" type="text" placeholder='Enter a Username' [(ngModel)]='this.inputValue'>
+                        </div>
+                    </div>
+                    <button class="button" id="add-button" (click)="addFriend()">{{this.languageService.language.addFriendButtonLabel}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

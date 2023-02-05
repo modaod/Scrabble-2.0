@@ -1,0 +1,13 @@
+.main-wrap {
+    background: white;
+}
+
+#spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-spinner::ng-deep circle {
+    stroke: rgb(241, 36, 163);
+}

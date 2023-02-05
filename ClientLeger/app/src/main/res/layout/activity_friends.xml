@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollview_background"
+    android:background="#E6E6F1">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".FriendsActivity"
+    android:padding="20dp"
+    android:id="@+id/background">
+
+    <Button
+        android:id="@+id/addFriendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style= "@style/Widget.MaterialComponents.Button.Icon"
+        android:text="@string/add_friend_button"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:backgroundTint="#cce0b7"/>
+
+    <TextView
+        android:id="@+id/textViewPending"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/pending_friends"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addFriendButton"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pendingFriendRequestsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg6"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPending"/>
+
+    <TextView
+        android:id="@+id/textViewOnline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/online_friends"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pendingFriendRequestsRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/onlineFriendsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg6"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOnline" />
+
+    <TextView
+        android:id="@+id/textViewOffline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/offline_friends"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onlineFriendsRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offlineFriendsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg6"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOffline" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

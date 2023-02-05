@@ -1,0 +1,66 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h2 class="fw-bold mb-2 text-uppercase">Friendly Chat Application</h2>
+            <!--              <p class="text-white-50 mb-5">Public Room!</p>-->
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <!-- <div class="row">
+                <div class="col-sm-4">
+                  <label for="roomInput">Choose room</label>
+                  <select name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
+                    <option value="Lobby">Public</option>
+                    <option value="Hall" disabled>Private</option>
+                  </select>
+                </div>
+                <div class="col-sm-5">
+                  <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
+                     <small id="userHelp" class="form-text text-muted">Type your username.</small>
+                  </div>
+                </div>
+                <div class="col sm-2">
+                  <div style="margin-top:27px;" class="pull-right">
+                    <button type="button" class="btn btn-primary" (click)="join()">Join</button>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="row">
+                <div class="msg-box" #scroll>
+                  <div *ngFor="let item of messageArray">
+
+                    <span><strong>{{item.date}} {{item.name}} : </strong>  &nbsp;{{item.text}} </span>
+                    
+                   
+            
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" [(ngModel)]="messageText" (keydown.enter)="sendMessage()">
+                </div>
+                <div class="col-sm-2">
+                  <button type="button" class="btn btn-success pull-right" (click)="sendMessage()">Send</button>
+                </div>
+              </div>
+
+            </div>
+            <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="leave()">
+              Sign Out
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

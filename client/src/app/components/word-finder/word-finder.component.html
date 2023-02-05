@@ -1,0 +1,35 @@
+<div class="profile-page-content">
+    <div class="profile-statistics">
+        <h1 id="title">{{this.languageService.language.verificationButton}}</h1>
+        <div id="word-container">
+            <div class="usage-statistics">
+                <div class="usage-statistics-container">
+                    <div id="search-icon">
+                        <mat-icon>search</mat-icon>
+                    </div>
+                    <input id="word-input" type="text" #word>
+                    <div id="close-icon">
+                        <button (click)="cleanInterface()">x</button>
+                    </div>
+                </div>
+            </div>
+            <button class="button" (click)="verifyWord(word.value)">{{this.languageService.language.searchButtonLabel}}</button>
+        </div>
+        <div class="usage-statistics">
+            <div class="usage-statistics-container">
+                <div *ngIf="isEmpty" id="word-results-container">
+                    <mat-icon>input</mat-icon>
+                    <p>{{this.languageService.language.enterLetterDescriptionLabel}}</p>
+                </div>
+                <div *ngIf="!isEmpty && isValidWord" id="word-results-container">
+                    <mat-icon>check_circle</mat-icon>
+                    <p>{{this.languageService.language.validWordP1}} {{ wordEntered }} {{this.languageService.language.validWordP2}}</p>
+                </div>
+                <div *ngIf="!isEmpty && !isValidWord" id="word-results-container">
+                    <mat-icon>cancel_icon</mat-icon>
+                    <p>{{this.languageService.language.validWordP1}} {{ wordEntered }} {{this.languageService.language.inValidWordP2}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

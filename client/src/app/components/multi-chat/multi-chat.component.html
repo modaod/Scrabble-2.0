@@ -1,0 +1,30 @@
+<div id="msg-box">
+    <p id="title-chat">{{this.languageService.language.roomChatLabel}} {{ room }}</p>
+    <div id="history-container" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div *ngFor="let chat of chats">
+            <ul id="chatlist">
+                ({{ chat.date | date:'short' }})
+                <div [ngClass]="chat.user === me ? 'me' : 'you'">
+                    <span *ngIf="chat.user === me ; else you"> Moi : {{ chat.message }} </span>
+                    <ng-template #you> {{ chat.user | uppercase }} : {{ chat.message }} </ng-template>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="input-group">
+        <input
+            type="text"
+            required
+            [(ngModel)]="newMessage"
+            placeholder="Entrer votre message."
+            minlength="1"
+            maxlength="512"
+            (keyup.enter)="sendMessage()"
+            autofocus
+        />
+        <button (click)="sendMessage()">{{this.languageService.language.sendButton}}</button>
+    </div>
+</div>
+
+

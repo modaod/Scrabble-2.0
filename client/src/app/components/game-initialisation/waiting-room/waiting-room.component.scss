@@ -1,0 +1,82 @@
+.main-wrap {
+    background: white;
+}
+
+#spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mat-spinner::ng-deep circle {
+    stroke: rgb(241, 36, 163);
+}
+
+.player-list{
+    position: relative;
+    display: -webkit-flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 0px;
+    caret-color: transparent;
+    border-radius: 8px;
+    background-color: #f4f4fa;
+}
+
+.player{
+    position: relative;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50vh;
+    caret-color: transparent;
+}
+
+.player-avatar{
+    position: relative;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    margin: 12px;
+    padding: 6px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid white;
+    border-radius: 14px;
+    background-color: #f4f4fa;
+    caret-color: transparent;
+}
+
+.player-name{
+    position: relative;
+    align-items: center;
+    justify-content: stretch;
+    font-size: 24px;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.player-type{
+    position: relative;
+    align-items: center;
+    justify-content: stretch;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.player-buttons {
+    position: relative;
+    display: -webkit-flex;
+    flex-direction: row;
+    margin-left: auto; 
+    margin-right: 0;
+    align-items: stretch;
+}
+
+.player-info-container p{
+    margin: 0px;
+}

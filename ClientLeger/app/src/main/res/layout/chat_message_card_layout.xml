@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_message_card_view"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/red_1"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:contentPadding="4dp"
+    >
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/item_timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="placeholder"
+                android:textSize="8pt">
+
+            </TextView>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_weight="2"
+                android:text="nameTest"
+                android:textSize="9pt">
+
+            </TextView>
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="5dp">
+
+            <View
+                android:layout_height="1dp"
+                android:layout_weight="5"
+                android:background="@color/gray_1">
+
+            </View>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/item_message"
+                android:layout_weight="5"
+                android:textSize="9pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/item_picture"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="2"
+                android:visibility="gone">
+
+            </ImageView>
+        </TableRow>
+
+
+    </TableLayout>
+
+</androidx.cardview.widget.CardView>

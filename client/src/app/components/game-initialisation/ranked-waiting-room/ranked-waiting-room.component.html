@@ -1,0 +1,14 @@
+<div class="container justified">
+    <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <div class="main-container">
+        <div class="main-wrap">
+            <p class="main-title">{{this.languageService.language.waitingRankedLabel}}</p>
+            <div id="spinner-container">
+                <mat-spinner></mat-spinner>
+            </div>
+            <div class="button-container">
+                <button class="button red" (click)="leaveQueue()">{{this.languageService.language.waitingRoomLeaveQueue}}</button>
+            </div>
+        </div>
+    </div>
+</div>

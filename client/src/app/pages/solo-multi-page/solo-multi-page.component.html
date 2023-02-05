@@ -1,0 +1,13 @@
+<div class="container justified" [ngStyle]="{'background-color': this.theme}">
+    <img class="logo-scrabble" src="https://bit.ly/3m206ss" width="400" height="80" alt="Logo Scrabble" />
+    <section class="game-modes">
+        <div class="button-container">
+            <button class="button" routerLink="/create-game" (click)="setRankedMode(true)">{{this.languageService.language.soloMultiCompetButtonLabel}}</button>
+            <button class="button" routerLink="/create-game" (click)="setRankedMode(false)">{{this.languageService.language.soloMultiMultiButtonLabel}}</button>
+            <button class="button" routerLink="/join-game">{{this.languageService.language.joinGameButtonLabel}}</button>
+            <button class="button red" routerLink="/home">{{this.languageService.language.soloMultiReturnButtonLabel}}</button>
+        </div>
+    </section>
+    <app-private-messages></app-private-messages>
+
+</div>

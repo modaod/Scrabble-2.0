@@ -1,0 +1,207 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+@use './app/pages/material-page/material-page.component.theme' as material-page;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$indigo-pink-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$indigo-palette),
+            accent: mat.define-palette(mat.$pink-palette, A200, A100, A400),
+            warn: mat.define-palette(mat.$red-palette),
+        ),
+    )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($indigo-pink-theme);
+@include material-page.theme($indigo-pink-theme);
+
+
+.deeppurple-amber-theme {
+    $deeppurple-amber-theme: mat.define-light-theme(
+        (
+            color: (
+                primary: mat.define-palette(mat.$deep-purple-palette),
+                accent: mat.define-palette(mat.$amber-palette, A200, A100, A400),
+            ),
+        )
+    );
+    @include mat.all-component-colors($deeppurple-amber-theme);
+    @include material-page.theme($deeppurple-amber-theme);
+}
+
+.pink-bluegrey-theme {
+    $pink-bluegrey-theme: mat.define-dark-theme(
+        (
+            color: (
+                primary: mat.define-palette(mat.$pink-palette, 700, 500, 900),
+                accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400),
+            ),
+        )
+    );
+    @include mat.all-component-colors($pink-bluegrey-theme);
+    @include material-page.theme($pink-bluegrey-theme);
+}
+
+.purple-green-theme {
+    $purple-green-theme: mat.define-dark-theme(
+        (
+            color: (
+                primary: mat.define-palette(mat.$purple-palette, 700, 500, 800),
+                accent: mat.define-palette(mat.$green-palette, A200, A100, A400),
+            ),
+        )
+    );
+    @include mat.all-component-colors($purple-green-theme);
+    @include material-page.theme($purple-green-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    font-size: 18px;
+}
+
+.logo-scrabble {
+    margin-top: 6%;
+}
+
+.button {
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    background-color: rgb(204, 224, 183);
+    border-radius: 7px;
+    width: 50vh;
+    box-shadow: 0 1.8px 1.2px rgba(0, 0, 0, 0.096), 0 5.7px 4.3px rgba(0, 0, 0, 0.103), 0 8.5px 7px rgba(0, 0, 0, 0.11);
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(94, 94, 94);
+    transition: color 0.5s linear;
+    -webkit-transition: color 0.2s linear;
+}
+
+.button:hover {
+    color: black;
+    cursor: pointer;
+    background: rgb(186, 204, 122);
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.green {
+    background: rgb(204, 224, 183);
+}
+
+.red {
+    background: #d3b1a7;
+}
+
+.red:hover {
+    background: #cb654f;
+}
+
+.justified {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.game-modes{
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    flex: 1;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.main-container {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    flex: 1;
+}
+
+.main-wrap {
+    background: #e6e6f1;
+    border-radius: 1vh;
+    padding: 5vh;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.login-title {
+    display: block;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: bold;
+    font-size: 39px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.main-title {
+    display: block;
+    font-family: 'Courier', Courier, monospace;
+    font-weight: bold;
+    font-size: 30px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.sub-title {
+    display: block;
+    font-family: 'Courier', Courier, monospace;
+    font-size: 25px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.custom-dialog-container .mat-dialog-container {
+    padding: 0px;
+}

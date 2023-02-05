@@ -1,0 +1,21 @@
+#ignoring .vscode folder but we keep some files for debuging
+/.vscode/chrome
+/.vs/
+.idea
+.vscode
+
+package-lock.json
+.DS_Store
+
+/Clientlegerprototype
+
+# Code Coverage Folder
+coverage/
+
+#Node Modules
+/node_modules
+
+#ignoring test files
+*.spec
+*.spec.ts
+.idea/inspectionProfiles/Project_Default.xml
